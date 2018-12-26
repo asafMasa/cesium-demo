@@ -2,9 +2,9 @@
   "name": "cesium-demo",
   "version": "0.0.0",
   "scripts": {
-    "predeploy": "npm run build:prod -- --base-href=https://asafMasa.github.io/ng2-video-cards/ --deploy-url=https://asafMasa.github.io/ng2-video-cards/",
-    "deploy": "gh-pages --repo https://$GITHUB_TOKEN@github.com/asafMasa/ng2-video-cards.git -d dist/ng2-video-cards",
-    "deploy:local": "gh-pages -d dist/ng2-video-cards",
+    "predeploy": "npm run build:prod -- --base-href=https://asafMasa.github.io/cesium-demo/ --deploy-url=https://asafMasa.github.io/cesium-demo/",
+    "deploy": "gh-pages --repo https://$GITHUB_TOKEN@github.com/asafMasa/cesium-demo.git -d dist/cesium-demo",
+    "deploy:local": "gh-pages -d dist/cesium-demo",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
