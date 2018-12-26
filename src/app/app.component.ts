@@ -5,11 +5,10 @@ declare const Cesium: any;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: [ './app.component.css' ]
 })
 export class AppComponent implements AfterViewInit {
   title = 'cesium-demo';
-
 
 
   @ViewChild('cesiumContainer') cesiumContainer: ElementRef;
@@ -19,7 +18,7 @@ export class AppComponent implements AfterViewInit {
 
   }
 
-  ngAfterViewInit(){
+  ngAfterViewInit() {
     const cesiumBingLayer = new Cesium.BingMapsImageryProvider({
       url: 'https://dev.virtualearth.net',
       key: 'Ag9RlBTbfJQMhFG3fxO9fLAbYMO8d5sevTe-qtDsAg6MjTYYFMFfFFrF2SrPIZNq',
