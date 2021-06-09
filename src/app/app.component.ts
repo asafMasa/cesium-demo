@@ -1,11 +1,11 @@
-import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 
 declare const Cesium: any;
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: [ './app.component.css' ]
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent implements AfterViewInit {
   title = 'cesium-demo';
@@ -19,14 +19,21 @@ export class AppComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    const cesiumBingLayer = new Cesium.BingMapsImageryProvider({
-      url: 'https://dev.virtualearth.net',
-      key: 'Ag9RlBTbfJQMhFG3fxO9fLAbYMO8d5sevTe-qtDsAg6MjTYYFMFfFFrF2SrPIZNq',
-      mapStyle: Cesium.BingMapsStyle.AERIAL_WITH_LABELS
+    const cesiumOSMLayer = new Cesium.OpenStreetMapImageryProvider({
+      url : 'https://a.tile.openstreetmap.org/'
     });
 
+    // const mapProxyWmtsWGS84 = new Cesium.WebMapTileServiceImageryProvider({
+    //   url : '../wmts/bluemarble_il/{TileMatrixSet}/{TileMatrix}/{TileCol}/{TileRow}.png',
+    //   layer : 'bluemarble_il',
+    //   style : 'default',
+    //   format : 'image/png',
+    //   tileMatrixSetID : 'newGrids',
+    //   tilingScheme: new Cesium.GeographicTilingScheme()
+    // });
+
     new Cesium.Viewer(this.cesiumContainer.nativeElement, {
-      imageryProvider: cesiumBingLayer
+      imageryProvider: cesiumOSMLayer
     });
   }
 }
